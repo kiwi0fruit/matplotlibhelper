@@ -16,14 +16,14 @@ Can export plots with unicode to SVG or PNG. See default fonts in default keywor
 
 # Install
 
-**_Via conda_** (should be `"pip>=10.0.1"` and `"conda>=4.5.4"`):
+Via conda (should be `"pip>=10.0.1"` and `"conda>=4.5.4"`):
 
 ```
 conda install numpy pandas ipython matplotlib pandoc pyyaml future shutilwhich
 pip install panflute sugartex matplotlibhelper
 ```
 
-**_Via pip_**:
+Via pip:
 
 ```
 pip install matplotlibhelper
