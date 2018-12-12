@@ -1,6 +1,6 @@
 # Matplotlib Helper
 
-Matplotlib Helper is my custom helper to tune Matplotlib experience for Pandoctools/Knitty. I tuned fonts, made some tweaks to use it with SugarTeX, some tweaks to use mpl interactive plots in Atom/Hydrogen.
+Matplotlib Helper is my custom helper to tune Matplotlib experience for [Pandoctools/Knitty](https://github.com/kiwi0fruit/pandoctools). I tuned fonts, made some tweaks to use it with SugarTeX, some tweaks to use mpl interactive plots in Atom/Hydrogen.
 
 Can export plots with unicode to SVG or PNG. See default fonts in default keyword arguments of `ready()`.
 
