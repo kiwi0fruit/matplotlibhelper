@@ -59,7 +59,7 @@ pandoctools:
 
 # %% --------------------
 from IPython.display import Markdown
-from pandoctools import matplotlib as mh
+import matplotlibhelper as mh
 mh.ready(font_size=14)  # should be run before import matplotlib.pyplot
 import matplotlib.pyplot as plt
 
