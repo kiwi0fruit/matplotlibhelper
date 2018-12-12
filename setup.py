@@ -13,7 +13,7 @@ setup(
     version=versioneer.get_version(),
     cmdclass=versioneer.get_cmdclass(),
 
-    description='Matplotlib Helper is my custom helper to tune Matplotlib experience.',
+    description='Matplotlib Helper is my custom helper to tune Matplotlib experience in Atom/Hydrogen and Pandoctools/Knitty.',
     long_description=long_description,
 
     url='https://github.com/kiwi0fruit/matplotlibhelper',
