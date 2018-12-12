@@ -1,0 +1,3 @@
+include matplotlibhelper/*
+include matplotlibhelper/fonts/*
+include versioneer.py
