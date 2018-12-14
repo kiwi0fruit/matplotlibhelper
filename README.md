@@ -67,9 +67,8 @@ Qt backend gives [interactive plots in Atom/Hydrogen](https://nteract.gitbooks.i
 
 ## Hints
 
-1. [MJ fonts](https://github.com/kiwi0fruit/open-fonts/tree/master/Fonts/MJ/oft).
-2. Delete `fontList.cache`, `fontList.py3k.cache` or `fontList.json` from `%USERPROFILE%\.matplotlib` folder after installing a new font.
-3. If font becomes bold without a reason try ([source](https://github.com/matplotlib/matplotlib/issues/5574)):
+1. Delete `fontList.cache`, `fontList.py3k.cache` or `fontList.json` from `%USERPROFILE%\.matplotlib` folder after installing a new font.
+2. If font becomes bold without a reason try ([source](https://github.com/matplotlib/matplotlib/issues/5574)):
 
 ```py
 from matplotlib import font_manager
@@ -79,4 +78,4 @@ if 'roman' in font_manager.weight_dict:
     font_manager._rebuild()
 ```
 
-4. Install [Computer Modern Unicode](https://sourceforge.net/projects/cm-unicode/) for bold-italic unicode support: `"mathtext.sf": "CMU Serif:bold:italic"`. Sans-serif command `\mathsf{}` is reassigned because sans-serif font is rarely used in serif docs.
+3. Install [Computer Modern Unicode](https://sourceforge.net/projects/cm-unicode/) for bold-italic unicode support: `"mathtext.sf": "CMU Serif:bold:italic"`. Sans-serif command `\mathsf{}` is reassigned because sans-serif font is rarely used in serif docs.
