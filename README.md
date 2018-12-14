@@ -1,8 +1,6 @@
 # Matplotlib Helper
 
-Matplotlib Helper is my custom helper to tune Matplotlib experience for [Pandoctools/Knitty](https://github.com/kiwi0fruit/pandoctools). I tuned fonts, made some tweaks to use it with SugarTeX, some tweaks to use mpl interactive plots in Atom/Hydrogen.
-
-Can export plots with unicode to SVG or PNG. See default fonts in default keyword arguments of `ready()`.
+Matplotlib Helper is my custom helper to tune Matplotlib experience for [Pandoctools/Knitty](https://github.com/kiwi0fruit/pandoctools). I tuned fonts (that are shipped with this python package, see default fonts in default keyword arguments of [`ready()`](https://github.com/kiwi0fruit/matplotlibhelper/blob/master/matplotlibhelper/matplotlib_helper.py)), made some tweaks to use it with [SugarTeX](https://github.com/kiwi0fruit/sugartex), some tweaks to automatically use interactive Qt5 plots in Atom/Hydrogen or non-jupyter python. It can export plots to SVG or PNG.
 
 
 # Contents
