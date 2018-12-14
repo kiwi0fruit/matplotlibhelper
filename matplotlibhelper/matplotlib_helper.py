@@ -74,7 +74,7 @@ def import_matplotlib(magic: str or None):
             magic = "widget"
         elif front == F.PYTHON:
             magic = 'Qt5Agg'  # special case
-    elif (magic == 'qt') and (front == F.PYTHON):
+    elif (magic == 'qt5') and (front == F.PYTHON):
         magic = 'Qt5Agg'  # special case
 
     if magic is None:
