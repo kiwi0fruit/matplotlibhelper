@@ -16,7 +16,7 @@ Can export plots with unicode to SVG or PNG. See default fonts in default keywor
 
 # Install
 
-Via conda (should be `"pip>=10.0.1"` and `"conda>=4.5.4"`):
+Via conda (should be `"pip>=10.0.1"`):
 
 ```
 conda install numpy pandas ipython matplotlib pandoc pyyaml future shutilwhich
