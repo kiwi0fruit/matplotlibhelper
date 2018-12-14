@@ -48,14 +48,6 @@ conda update --all
 Usage example that works both in Atom+Hydrogen and in Pandoctools+Knitty:
 
 ```py
-"""
----
-pandoctools:
-  profile: Default
-...
-"""
-
-# %% --------------------
 from IPython.display import Markdown
 import matplotlibhelper as mh
 mh.ready(font_size=14)  # should be run before import matplotlib.pyplot
