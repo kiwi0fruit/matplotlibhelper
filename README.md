@@ -54,9 +54,9 @@ mh.ready(font_size=14)  # should be run before import matplotlib.pyplot
 import matplotlib.pyplot as plt
 
 
-plt.figure(figsize=mh.figsize(w=6))
+plt.figure(figsize=mh.figsize(w=6))  # height is automatic via the golden ration
 plt.plot([1, 2, 3, 4])
-plt.ylabel(mh.stex('ˎ∇ ⋅ [ ⃗E]ˎ, V/m'))
+plt.ylabel(mh.stex('ˎ∇ ⋅ [ ⃗E]ˎ, V/m'))  # using SugarTeX
 
 # this code in knitty would be parsed by pandoc:
 Markdown(f'![My beautiful figure]({mh.img(plt)}){{#fig:1}}')
