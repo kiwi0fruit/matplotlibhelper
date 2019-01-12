@@ -1,12 +1,18 @@
 Matplotlib Helper
 =================
 
-Matplotlib Helper is my custom helper to tune Matplotlib experience. I
-tuned fonts, made some tweaks to use it with SugarTeX, some tweaks to
-use mpl interactive plots in Atom/Hydrogen.
+Matplotlib Helper is my custom helper to tune Matplotlib experience for
+`Pandoctools/Knitty <https://github.com/kiwi0fruit/pandoctools>`__ (but
+it can be used by itself). I tuned fonts (that are shipped with this
+python package), please see default fonts and other options in default
+keyword arguments of
+```ready()`` <https://github.com/kiwi0fruit/matplotlibhelper/blob/master/matplotlibhelper/matplotlib_helper.py>`__).
+I made some tweaks to use it with
+`SugarTeX <https://github.com/kiwi0fruit/sugartex>`__, some tweaks to
+automatically use interactive Qt5 plots in Atom/Hydrogen or non-jupyter
+Python. It can also export plots to SVG or PNG.
 
-Can export plots with unicode to SVG or PNG. See default fonts in
-default keyword arguments of ``ready()``.
+Works in Jupyter as well.
 
 Contents
 ========
@@ -20,14 +26,14 @@ Contents
 Install
 =======
 
-**Via conda** (should be ``"pip>=10.0.1"`` and ``"conda>=4.5.4"``):
+Via conda (should be ``"pip>=10.0.1"``):
 
 ::
 
    conda install numpy pandas ipython matplotlib pandoc pyyaml future shutilwhich
    pip install panflute sugartex matplotlibhelper
 
-**Via pip**:
+Via pip:
 
 ::
 
@@ -57,25 +63,18 @@ Pandoctools+Knitty:
 
 .. code:: py
 
-   """
-   ---
-   pandoctools:
-     profile: Default
-   ...
-   """
-
-   # %% --------------------
    from IPython.display import Markdown
    import matplotlibhelper as mh
    mh.ready(font_size=14)  # should be run before import matplotlib.pyplot
    import matplotlib.pyplot as plt
 
 
-   plt.figure(figsize=mh.figsize(w=6))
+   plt.figure(figsize=mh.figsize(w=6))  # height is automatic via the golden ration
    plt.plot([1, 2, 3, 4])
-   plt.ylabel(mh.stex('ˎ∇ ⋅ [ ⃗E]ˎ, V/m'))
+   plt.ylabel(mh.stex('ˎ∇ ⋅ [ ⃗E]ˎ, V/m'))  # using SugarTeX
 
-   # this code in knitty would be parsed by pandoc:
+   # this code in Knitty would be parsed by Pandoc,
+   # in Atom/Hydrogen or Jupyter it would be displayed:
    Markdown(f'![My beautiful figure]({mh.img(plt)}){{#fig:1}}')
 
 Qt backend gives `interactive plots in
@@ -84,12 +83,10 @@ Atom/Hydrogen <https://nteract.gitbooks.io/hydrogen/docs/Usage/Examples.html#int
 Hints
 -----
 
-1. `MJ
-   fonts <https://github.com/kiwi0fruit/open-fonts/tree/master/Fonts/MJ/oft>`__.
-2. Delete ``fontList.cache``, ``fontList.py3k.cache`` or
+1. Delete ``fontList.cache``, ``fontList.py3k.cache`` or
    ``fontList.json`` from ``%USERPROFILE%\.matplotlib`` folder after
    installing a new font.
-3. If font becomes bold without a reason try
+2. If font becomes bold without a reason try
    (`source <https://github.com/matplotlib/matplotlib/issues/5574>`__):
 
 .. code:: py
@@ -100,7 +97,7 @@ Hints
        # noinspection PyProtectedMember
        font_manager._rebuild()
 
-4. Install `Computer Modern
+3. Install `Computer Modern
    Unicode <https://sourceforge.net/projects/cm-unicode/>`__ for
    bold-italic unicode support:
    ``"mathtext.sf": "CMU Serif:bold:italic"``. Sans-serif command
