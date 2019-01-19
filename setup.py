@@ -38,7 +38,7 @@ setup(
     packages=find_packages(exclude=['docs', 'tests']),
 
     install_requires=['numpy', 'pandas', 'ipython',
-                      'sugartex>=0.1.10', 'matplotlib'],
+                      'sugartex>=0.1.13', 'matplotlib'],
 
     include_package_data=True,
     package_data={
