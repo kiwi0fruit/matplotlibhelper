@@ -30,7 +30,7 @@ Via conda (should be ``"pip>=10.0.1"``):
 
 ::
 
-   conda install numpy pandas ipython matplotlib pandoc pyyaml future shutilwhich
+   conda install numpy pandas ipython matplotlib pyyaml future shutilwhich
    pip install panflute sugartex matplotlibhelper
 
 Via pip:
