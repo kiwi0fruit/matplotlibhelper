@@ -1,10 +1,10 @@
 from setuptools import setup, find_packages
-
+import io
 import os
 import versioneer
 
 here = os.path.abspath(os.path.dirname(__file__))
-with open(os.path.join(here, 'README.rst'), encoding='utf-8') as f:
+with io.open(os.path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
 
@@ -15,6 +15,7 @@ setup(
 
     description='Matplotlib Helper is my custom helper to tune Matplotlib experience in Atom/Hydrogen and Pandoctools/Knitty.',
     long_description=long_description,
+    long_description_content_type="text/markdown",
 
     url='https://github.com/kiwi0fruit/matplotlibhelper',
 
@@ -30,15 +31,14 @@ setup(
         'License :: OSI Approved :: MIT License',
 
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
     ],
 
     # keywords='sample setuptools development',
     packages=find_packages(exclude=['docs', 'tests']),
-
+    python_requires='>=3.6',
     install_requires=['numpy', 'pandas', 'ipython',
-                      'sugartex>=0.1.13', 'matplotlib'],
+                      'sugartex>=0.1.16', 'matplotlib'],
 
     include_package_data=True,
     package_data={
