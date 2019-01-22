@@ -16,11 +16,10 @@ Works in Jupyter as well.
 
 # Install
 
-Via conda (should be `"pip>=10.0.1"`):
+Via conda:
 
 ```
-conda install numpy pandas ipython matplotlib pyyaml future shutilwhich
-pip install panflute sugartex matplotlibhelper
+conda install -c defaults -c conda-forge matplotlibhelper
 ```
 
 Via pip:
