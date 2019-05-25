@@ -49,7 +49,7 @@ conda update --all
 Usage example that works both in Atom+Hydrogen and in Pandoctools+Knitty:
 
 ```py
-from IPython.display import Markdown
+import IPython.display as ds
 import matplotlibhelper as mh
 mh.ready(font_size=14)  # should be run before import matplotlib.pyplot
 import matplotlib.pyplot as plt
@@ -61,7 +61,13 @@ plt.ylabel(mh.stex('ˎ∇ ⋅ [ ⃗E]ˎ, V/m'))  # using SugarTeX
 
 # this code in Knitty would be parsed by Pandoc,
 # in Atom/Hydrogen or Jupyter it would be displayed:
-Markdown(f'![My beautiful figure]({mh.img(plt)}){{#fig:1}}')
+ds.display(ds.Markdown(
+    f'![My beautiful figure]({mh.img(plt)}){{#fig:1}}'
+))
+# or if you have image size issues in Hydrogen try:
+ds.display(ds.HTML(
+    f'<img src="{mh.img(plt)}" width="900">'
+))
 ```
 
 Qt backend gives [interactive plots in Atom/Hydrogen](https://nteract.gitbooks.io/hydrogen/docs/Usage/Examples.html#interactive-plots-using-matplotlib).
