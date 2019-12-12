@@ -60,9 +60,6 @@ def get_front() -> str:
 
 
 def import_matplotlib(magic: str or None):
-    """
-    Returns matplotlib
-    """
     front = get_front()
 
     if magic == 'auto':
@@ -86,8 +83,6 @@ def import_matplotlib(magic: str or None):
         get_ipython().magic("matplotlib " + magic)
         import matplotlib
 
-    return matplotlib
-
 
 _readied = False
 GR = (1 + 5 ** 0.5) / 2
@@ -107,9 +102,9 @@ def ready(ext: str='svg',
           font_serif: Union[str, tuple]=('STIX Two Text', 'STIX Two Math'),
           font_sans: Union[str, tuple]=('Segoe UI', 'Noto Sans', 'DejaVu Sans'),
           font_cursive: Union[str, tuple]=None,
-          font_mono: Union[str, tuple]=('Open Mono', 'DejaVu Sans Mono'),
+          font_mono: Union[str, tuple]=('Robotization Mono', 'DejaVu Sans Mono'),
           fontm_set: str='custom',
-          fontm_mono: str='Open Mono',
+          fontm_mono: str='Robotization Mono',
           fontm_calig: str="MJ_Cal",
           fontm_regular: str="MJ",
           fontm_italic: str="MJ_Mat",
@@ -141,8 +136,8 @@ def ready(ext: str='svg',
     """
     # Set mpl backend:
     # ----------------
-    global mpl
-    mpl = import_matplotlib(magic)
+    import_matplotlib(magic)
+    import matplotlib as mpl
     from matplotlib import font_manager
 
     # Set mpl fonts:
@@ -191,8 +186,7 @@ def ready(ext: str='svg',
     _ext, _dpi, _hide, _folder, _readied = ext, dpi, hide, folder, True
 
 
-def img(plot,
-        name: str=None,
+def img(name: str=None,
         ext: str=None,
         dpi: int=None,
         hide: bool=None,
@@ -206,8 +200,6 @@ def img(plot,
 
     Parameters
     ----------
-    plot :
-        matplotlib.pyplot
     name :
         File name to store image (without extension).
     ext :
@@ -229,6 +221,8 @@ def img(plot,
     """
     if not _readied:
         ready()
+    import matplotlib as mpl
+    import matplotlib.pyplot as plot
 
     ext = ext if (ext is not None) else _ext
     dpi = dpi if (dpi is not None) else _dpi
@@ -270,8 +264,7 @@ def img(plot,
         return base64_url
 
 
-def img_path(plot,
-             name: str,
+def img_path(name: str,
              ext: str=None,
              dpi: int=None,
              hide: bool=None,
@@ -304,7 +297,7 @@ def img_path(plot,
     """
     if not (name and isinstance(name, str)):
         raise ValueError(f"Invalid name: '{name}'")
-    return img(plot, name, ext, dpi, hide, return_path=True)
+    return img(name, ext, dpi, hide, return_path=True)
 
 
 # noinspection PyPep8Naming
