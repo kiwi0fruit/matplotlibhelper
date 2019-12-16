@@ -6,6 +6,7 @@ import base64
 # noinspection PyUnresolvedReferences
 from sugartex import sugartex, stex
 import numpy as np
+from numpy import ndarray as Array
 import pandas as pd
 from typing import Tuple, Union, Iterable
 import os
@@ -99,10 +100,10 @@ def ready(ext: str='svg',
           font_dir: str=None,
           font_size: float=12.8,
           font_family: str="serif",
-          font_serif: Union[str, tuple]=('STIX Two Text', 'STIX Two Math'),
-          font_sans: Union[str, tuple]=('Segoe UI', 'Noto Sans', 'DejaVu Sans'),
-          font_cursive: Union[str, tuple]=None,
-          font_mono: Union[str, tuple]=('Robotization Mono', 'DejaVu Sans Mono'),
+          font_serif: Union[str, Tuple[str, ...]]=('STIX Two Text', 'STIX Two Math'),
+          font_sans: Union[str, Tuple[str, ...]]=('Segoe UI', 'Noto Sans', 'DejaVu Sans'),
+          font_cursive: Union[str, Tuple[str, ...]]=None,
+          font_mono: Union[str, Tuple[str, ...]]=('Robotization Mono', 'DejaVu Sans Mono'),
           fontm_set: str='custom',
           fontm_mono: str='Robotization Mono',
           fontm_calig: str="MJ_Cal",
@@ -276,8 +277,6 @@ def img_path(name: str,
 
     Parameters
     ----------
-    plot :
-        matplotlib.pyplot
     name :
         File name to store image (without extension).
     ext :
@@ -302,11 +301,11 @@ def img_path(name: str,
 
 # noinspection PyPep8Naming
 def dump2D(file_path: str,
-           matrix: np.ndarray=None,
-           x: np.ndarray=None,
-           y: np.ndarray=None,
-           stack: Tuple[np.ndarray]=None,
-           cat: Tuple[np.ndarray]=None,
+           matrix: Array=None,
+           x: Array=None,
+           y: Array=None,
+           stack: Tuple[Array, ...]=None,
+           cat: Tuple[Array, ...]=None,
            header=False) -> None:
     """
     Dumps 2D plot arguments to CSV file. Provide 2D matrix,
