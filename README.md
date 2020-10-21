@@ -57,7 +57,7 @@ import matplotlib.pyplot as plt
 
 plt.figure(figsize=mh.figsize(w=6))  # height is automatic via the golden ration
 plt.plot([1, 2, 3, 4])
-plt.ylabel(mh.stex('ˎ∇ ⋅ [ ⃗E]ˎ, V/m'))  # using SugarTeX
+plt.ylabel(mh.stex('ˎ∇ ⋅ [⠘E]ˎ, V/m'))  # using SugarTeX
 
 # this code in Knitty would be parsed by Pandoc,
 # in Atom/Hydrogen or Jupyter it would be displayed:
